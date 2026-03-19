@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Inbox Puzzles</title>
+
+  <!-- Shared site shell -->
+  <link rel="stylesheet" href="/Solutions/common/site-shell.css" />
+
+  <style>
+    :root{
+      --teal:#008080;
+      --gold:#d8c178;
+      --ink:#222;
+      --paper:#ffffff;
+      --line:#d8d8d8;
+      --shadow:0 4px 14px rgba(0,0,0,0.10);
+    }
+
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      color:var(--ink);
+    }
+
+    .page-title{
+      background:var(--teal);
+      color:#fff;
+      text-align:center;
+      padding:18px 10px;
+      font-size:clamp(28px,5vw,46px);
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .page-subtitle{
+      text-align:center;
+      color:#555;
+      font-style:italic;
+      font-size:clamp(16px,2.4vw,24px);
+      margin:14px auto 20px;
+      padding:0 14px;
+      max-width:1000px;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 10px 30px;
+    }
+
+    .intro-card,
+    .puzzle-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.08);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      padding:18px;
+      margin-bottom:22px;
+    }
+
+    .intro-card p,
+    .puzzle-text p{
+      margin:0 0 14px;
+      font-size:18px;
+      line-height:1.7;
+      color:#333;
+    }
+
+    .intro-card p:last-child,
+    .puzzle-text p:last-child{
+      margin-bottom:0;
+    }
+
+    .puzzle-card{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .puzzle-visual{
+      text-align:center;
+    }
+
+    .puzzle-visual img{
+      display:block;
+      width:100%;
+      max-width:260px;
+      height:auto;
+      margin:0 auto;
+      border-radius:16px;
+    }
+
+    .puzzle-text h2{
+      margin:0 0 10px;
+      color:var(--teal);
+      font-size:clamp(24px,3vw,34px);
+      line-height:1.15;
+    }
+
+    .tips{
+      margin-top:14px;
+      padding:14px 16px;
+      background:#f8f8f8;
+      border-left:6px solid var(--gold);
+      border-radius:12px;
+    }
+
+    .tips h3{
+      margin:0 0 8px;
+      color:var(--teal);
+      font-size:18px;
+    }
+
+    .tips p{
+      margin:0;
+      font-size:16px;
+      line-height:1.6;
+      color:#444;
+    }
+
+    @media (max-width: 860px){
+      .puzzle-card{
+        grid-template-columns:1fr;
+      }
+
+      .puzzle-visual img{
+        max-width:280px;
+      }
+
+      .intro-card,
+      .puzzle-card{
+        padding:16px;
+      }
+
+      .intro-card p,
+      .puzzle-text p{
+        font-size:17px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Injected site header -->
+  <div id="site-header"></div>
+
+  <div class="page-title">About Inbox Puzzles</div>
+  <div class="page-subtitle">How each puzzle works, plus simple tips to help you solve with confidence.</div>
+
+  <div class="container">
+
+    <section class="intro-card">
+      <p><strong>Welcome to Inbox Puzzles</strong> — your daily dose of fun, focus, and mental refresh delivered straight to your inbox. Each day, you’ll receive a curated set of engaging puzzles designed to challenge your mind, sharpen your thinking, and give you a satisfying break from the everyday routine.</p>
+
+      <p>Whether you have a few quiet minutes in the morning, a midday reset, or a relaxing wind-down in the evening, these puzzles are designed to fit seamlessly into your day. From classic crosswords and relaxing word searches to logic-based Sudoku and clever cryptojokes, there’s something here for every kind of puzzle solver.</p>
+
+      <p>No printing, no setup — just open, play, and enjoy.</p>
+    </section>
+
+    <section class="puzzle-card">
+      <div class="puzzle-visual">
+        <img src="/Solutions/assets/puzzle-icons/crossword.png" alt="Crossword icon">
+      </div>
+      <div class="puzzle-text">
+        <h2>Crossword</h2>
+        <p>Crossword puzzles challenge your vocabulary, general knowledge, and pattern recognition skills. Each puzzle consists of a grid of white and gold squares, where you fill in words based on the provided clues. Clues are divided into “Across” and “Down,” and each numbered square marks the start of a word. The goal is to complete the grid so that every word fits correctly and intersects properly with others.</p>
+
+        <p>If you’re new to crosswords, start with the shorter clues or the ones you feel most confident about. Fill in what you know first — even a few letters can help unlock neighboring answers. Pay attention to clue wording, since tense, plurality, and wordplay often matter. Don’t be afraid to skip around. Solving crosswords is as much about strategy as it is knowledge.</p>
+
+        <div class="tips">
+          <h3>Helpful Tip</h3>
+          <p>Start with easy clues, then use crossing letters to help solve the harder ones.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="puzzle-card">
+      <div class="puzzle-visual">
+        <img src="/Solutions/assets/puzzle-icons/wordsearch.png" alt="Word Search icon">
+      </div>
+      <div class="puzzle-text">
+        <h2>Word Search</h2>
+        <p>Word Search puzzles are all about spotting hidden words within a grid of letters. Words may appear horizontally, vertically, diagonally, and sometimes even backward. Each puzzle includes a list of target words, and your goal is to find and highlight every one of them.</p>
+
+        <p>A good strategy is to scan the grid for unusual letters or letter combinations that stand out. Looking for the first or last letter of a word can make it easier to track its direction. Once you find a word, crossing it off your list helps you stay organized. Take your time — these puzzles are meant to be relaxing, satisfying, and enjoyable to solve at your own pace.</p>
+
+        <div class="tips">
+          <h3>Helpful Tip</h3>
+          <p>Try looking for uncommon letters first, then trace outward to see whether they form one of the listed words.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="puzzle-card">
+      <div class="puzzle-visual">
+        <img src="/Solutions/assets/puzzle-icons/sudoku.png" alt="Sudoku icon">
+      </div>
+      <div class="puzzle-text">
+        <h2>Sudoku</h2>
+        <p>Sudoku is a logic-based number puzzle played on a 9×9 grid. The goal is to fill in the grid so that every row, every column, and each of the nine 3×3 boxes contains the numbers 1 through 9 exactly once. No guessing is required — every solution can be reached through logic and deduction.</p>
+
+        <p>Start by scanning for rows, columns, or boxes that already have several numbers filled in. These are often the easiest places to identify what’s missing. Look for numbers that can fit in only one possible position. As the puzzle progresses, use elimination to narrow down the remaining options. With practice, patterns become easier to recognize and your solving speed will improve.</p>
+
+        <div class="tips">
+          <h3>Helpful Tip</h3>
+          <p>Focus on one number at a time and scan the whole board to see where it can and cannot go.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="puzzle-card">
+      <div class="puzzle-visual">
+        <img src="/Solutions/assets/puzzle-icons/cryptojoke.png" alt="Cryptojoke icon">
+      </div>
+      <div class="puzzle-text">
+        <h2>Cryptojoke</h2>
+        <p>Cryptojoke puzzles are a playful twist on classic cryptograms — each one hides a joke behind a coded message. Every letter in the puzzle has been substituted with a different letter, and your goal is to decode the message and reveal the punchline.</p>
+
+        <p>Start by looking for common short words like “THE,” “AND,” or single-letter words like “I” and “A.” Repeated letter patterns can also give you clues. As you solve more letters, the message will gradually reveal itself. Keep following the patterns, and before long the hidden joke will come into focus — along with the laugh at the end.</p>
+
+        <div class="tips">
+          <h3>Helpful Tip</h3>
+          <p>Repeated words and repeated letter patterns are often the quickest way to crack the code.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Injected site footer -->
+  <div id="site-footer"></div>
+
+  <script>
+    function loadPartial(targetId, url) {
+      fetch(url)
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.text();
+        })
+        .then(html => {
+          const el = document.getElementById(targetId);
+          if (el) el.innerHTML = html;
+        })
+        .catch(err => console.error('Failed to load partial:', url, err));
+    }
+
+    loadPartial('site-header', '/Solutions/common/header.html');
+    loadPartial('site-footer', '/Solutions/common/footer.html');
+  </script>
+</body>
+</html>
