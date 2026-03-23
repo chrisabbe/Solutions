@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy</title>
+
+  <!-- Shared site shell -->
+  <link rel="stylesheet" href="/Solutions/common/site-shell.css" />
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      color:#222;
+    }
+
+    .page-title{
+      background:#008080;
+      color:#fff;
+      text-align:center;
+      padding:18px 10px;
+      font-size:clamp(28px,5vw,42px);
+      font-weight:700;
+    }
+
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:20px 14px 40px;
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    h2{
+      color:#008080;
+      margin-top:26px;
+    }
+
+    p{
+      margin:10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="site-shell">
+
+  <div id="site-header"></div>
+
+  <div class="page-title">Privacy Policy</div>
+
+  <div class="container">
+    <!-- PASTE YOUR CONTENT HERE -->
+    <p><strong>Last updated:</strong> March 22, 2026</p>
+
+<p>Inbox Puzzles respects your privacy. This policy explains what information we collect and how it is used.</p>
+
+<h2>1. Information We Collect</h2>
+<p>We collect only the information necessary to provide our service, which may include:</p>
+<ul>
+  <li>Your email address (for puzzle delivery and subscription management)</li>
+  <li>Basic subscription information</li>
+</ul>
+<p>We do not collect sensitive personal information.</p>
+
+<h2>2. Puzzle Progress Storage</h2>
+<p>Some puzzles save progress locally in your browser using local storage. This information:</p>
+<ul>
+  <li>Is stored only on your device</li>
+  <li>Is not transmitted to our servers</li>
+  <li>Can be cleared at any time using the puzzle’s reset or clear option</li>
+</ul>
+
+<h2>3. Cookies</h2>
+<p>We may use limited cookies necessary for basic site functionality. We do not use cookies for advertising or behavioral tracking.</p>
+
+<h2>4. How We Use Information</h2>
+<p>Your information is used only to:</p>
+<ul>
+  <li>Deliver puzzle emails</li>
+  <li>Manage subscriptions</li>
+  <li>Improve the user experience</li>
+</ul>
+<p>We do not sell or rent personal information.</p>
+
+<h2>5. Third-Party Services</h2>
+<p>Inbox Puzzles may rely on trusted third-party services for:</p>
+<ul>
+  <li>Email delivery</li>
+  <li>Website hosting</li>
+</ul>
+<p>These services process data only as needed to provide their functionality and are subject to their own privacy policies.</p>
+
+<h2>6. Data Security</h2>
+<p>We take reasonable measures to protect your information, but no method of transmission or storage is completely secure.</p>
+
+<h2>7. Your Choices</h2>
+<p>You may:</p>
+<ul>
+  <li>Unsubscribe from emails at any time</li>
+  <li>Request removal of your email address from our system</li>
+</ul>
+
+<h2>8. Changes to This Policy</h2>
+<p>This Privacy Policy may be updated periodically. Updates will be posted on this page.</p>
+
+<h2>9. Contact</h2>
+<p>If you have questions about this Privacy Policy, please contact us at:<br>
+<a href="mailto:abbeventures@gmail.com">abbeventures@gmail.com</a></p>
+  </div>
+
+  <div id="site-footer"></div>
+
+</div>
+
+<script>
+function loadPartial(targetId, url) {
+  fetch(url)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById(targetId).innerHTML = html;
+    });
+}
+
+loadPartial("site-header", "/Solutions/common/header.html");
+loadPartial("site-footer", "/Solutions/common/footer.html");
+</script>
+
+</body>
+</html>
