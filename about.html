@@ -140,6 +140,44 @@
         font-size:17px;
       }
     }
+    .support-section{
+  margin:40px auto 20px;
+  max-width:900px;
+  background:rgba(255,255,255,0.6);
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:20px;
+  padding:20px 16px;
+  text-align:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.support-section h2{
+  color:var(--teal);
+  margin-bottom:10px;
+  font-size:clamp(22px,3vw,30px);
+}
+
+.support-section p{
+  margin:8px 0;
+  font-size:clamp(15px,2.2vw,18px);
+  line-height:1.5;
+}
+
+.support-section a{
+  color:var(--teal);
+  text-decoration:none;
+}
+
+.support-section a:hover{
+  text-decoration:underline;
+}
+
+.support-note{
+  font-size:13px;
+  color:#666;
+  font-style:italic;
+  margin-top:10px;
+}
   </style>
 </head>
 <body>
@@ -229,7 +267,23 @@
     </section>
 
   </div>
+<div class="support-section">
+  <h2>Need Help?</h2>
 
+  <p>
+    If you have any questions, run into any issues, or just need a little guidance,
+    we’re here to help.
+  </p>
+
+  <p>
+    You can reach us anytime at:<br>
+    <strong><a href="mailto:support@inboxpuzzles.com">support@inboxpuzzles.com</a></strong>
+  </p>
+
+  <p class="support-note">
+    For faster help, please include the puzzle type and a brief description of the issue. If possible, mention which email or puzzle link you were using.
+  </p>
+</div>
   <!-- Injected site footer -->
   <div id="site-footer"></div>
 
