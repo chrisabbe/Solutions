@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yesterday's Solutions</title>
+
+  <!-- Shared site shell -->
+  <link rel="stylesheet" href="/Solutions/common/site-shell.css" />
+
+  <style>
+    :root{
+      --teal:#008080;
+      --gold:#d8c178;
+      --ink:#222;
+      --paper:#ffffff;
+      --panel:#f4f4f4;
+      --line:#d5d5d5;
+      --shadow:0 2px 8px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      color:var(--ink);
+    }
+
+    .page-title{
+      background:var(--teal);
+      color:#fff;
+      text-align:center;
+      padding:18px 10px;
+      font-size:clamp(28px,5vw,46px);
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    /* ✅ NEW DAY LABEL */
+    .day-label{
+      text-align:center;
+      font-size:14px;
+      color:#666;
+      margin:12px 0 6px;
+      font-weight:700;
+      letter-spacing:.3px;
+    }
+
+    .page-subtitle{
+      text-align:center;
+      color:#555;
+      font-style:italic;
+      font-size:clamp(16px,2.6vw,26px);
+      margin:6px auto 20px;
+      padding:0 12px;
+    }
+
+    .container{
+      max-width:1320px;
+      margin:0 auto;
+      padding:0 10px 28px;
+    }
+
+    .solutions-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:28px;
+      align-items:start;
+    }
+
+    .solution-card{
+      background:#ffffff;
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.10);
+      border:1px solid rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+
+    .solution-card h2{
+      margin:4px 6px 12px;
+      color:var(--teal);
+      font-size:clamp(20px,2.4vw,32px);
+      line-height:1.15;
+      text-align:center;
+    }
+
+    .solution-shot{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid #ddd;
+    }
+
+    @media (max-width: 860px){
+      .solutions-grid{
+        grid-template-columns:1fr;
+      }
+
+      .container{
+        padding:0 8px 24px;
+      }
+
+      .solution-card{
+        padding:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Injected site header -->
+  <div id="site-header"></div>
+
+  <div class="page-title">Yesterday's Solutions</div>
+
+  <!-- ✅ EDIT THIS ONLY -->
+  <div class="day-label">Day 22</div>
+
+  <div class="page-subtitle">
+    All four completed grids and answers from the previous day.
+  </div>
+
+  <div class="container">
+    <div class="solutions-grid">
+      <section class="solution-card">
+        <h2>Crossword</h2>
+        <img class="solution-shot" src="./crossword.jpg" alt="Yesterday's crossword solution" />
+      </section>
+
+      <section class="solution-card">
+        <h2>Word Search</h2>
+        <img class="solution-shot" src="./wordsearch.jpg" alt="Yesterday's word search solution" />
+      </section>
+
+      <section class="solution-card">
+        <h2>Sudoku</h2>
+        <img class="solution-shot" src="./sudoku.jpg" alt="Yesterday's sudoku solution" />
+      </section>
+
+      <section class="solution-card">
+        <h2>Cryptojoke</h2>
+        <img class="solution-shot" src="./cryptojoke.jpg" alt="Yesterday's cryptojoke solution" />
+      </section>
+    </div>
+  </div>
+
+  <!-- Injected site footer -->
+  <div id="site-footer"></div>
+
+  <script>
+    function loadPartial(targetId, url) {
+      fetch(url)
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.text();
+        })
+        .then(html => {
+          const el = document.getElementById(targetId);
+          if (el) el.innerHTML = html;
+        })
+        .catch(err => console.error('Failed to load partial:', url, err));
+    }
+
+    loadPartial('site-header', '/Solutions/common/header.html');
+    loadPartial('site-footer', '/Solutions/common/footer.html');
+  </script>
+</body>
+</html>
