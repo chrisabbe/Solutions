@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inbox Puzzles</title>
+
+<style>
+  :root{
+    --teal:#008080;
+    --gold:#d8c178;
+    --ink:#222;
+    --bg:#f4f6f7;
+    --card:#ffffff;
+    --muted:#666;
+    --fine:#888;
+    --shadow:0 4px 16px rgba(0,0,0,0.10);
+  }
+
+  body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    box-sizing:border-box;
+    color:var(--ink);
+  }
+
+  .card{
+    background:var(--card);
+    padding:30px 20px;
+    border-radius:16px;
+    max-width:420px;
+    width:100%;
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+
+  .logo-wrap{
+    margin-bottom:10px;
+  }
+
+  .logo{
+    max-width:200px;
+    width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+  }
+
+  .brand{
+    color:var(--teal);
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+
+  h1{
+    color:var(--teal);
+    font-size:26px;
+    margin:0 0 10px;
+    line-height:1.2;
+  }
+
+  .subtext{
+    font-size:15px;
+    color:#555;
+    margin-bottom:20px;
+    line-height:1.5;
+  }
+
+  input[type="text"]{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    margin-bottom:12px;
+    box-sizing:border-box;
+  }
+
+  button{
+    width:100%;
+    padding:14px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:6px;
+    background:var(--gold);
+    color:#ffffff;
+    cursor:pointer;
+  }
+
+  button:hover{
+    background:#cbb167;
+  }
+
+  .email-note{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:14px;
+    line-height:1.5;
+  }
+
+  .fineprint{
+    font-size:12px;
+    color:var(--fine);
+    margin-top:10px;
+    line-height:1.5;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="logo-wrap">
+    <img class="logo" src="https://chrisabbe.github.io/Solutions/assets/inbox-puzzles-logo.png" alt="Inbox Puzzles">
+  </div>
+
+  
+
+  <h1>Enjoy Your Daily Dose of Puzzles</h1>
+
+  <div class="subtext">
+    Crossword, Word Search, Sudoku &amp; Cryptojoke — delivered daily to your inbox
+  </div>
+
+  <form method="post" action="https://sendsteed.com/subscribe/">
+
+    <!-- REQUIRED FIELDS -->
+    <input type="hidden" name="lllid" value="124212">
+    <input type="hidden" name="lluid" value="chrisabbe">
+    <input type="hidden" name="redirect" value="YOUR-CONFIRMATION-PAGE-URL-HERE">
+
+    <!-- EMAIL -->
+    <input
+      type="text"
+      name="e124212"
+      placeholder="your@email.com"
+      required
+    >
+
+    <!-- BUTTON -->
+    <button type="submit">
+      Start My Free 7-Day Trial
+    </button>
+
+  </form>
+
+  <div class="email-note">
+    📬 Check your inbox for a confirmation email.<br>
+    If you don’t see it, check your spam or promotions folder and move it to your inbox.<br>
+    To make sure you never miss a puzzle, add us to your contacts.
+  </div>
+
+  <div class="fineprint">
+    Free 7-day trial. Unsubscribe anytime.
+  </div>
+
+</div>
+
+</body>
+</html>
