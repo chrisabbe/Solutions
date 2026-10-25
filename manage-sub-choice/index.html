@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Your Subscription — Inbox Puzzles</title>
+<style>
+  :root{
+    --teal:#008080;
+    --gold:#d8c178;
+    --ink:#222;
+    --bg:#f4f6f7;
+    --card:#ffffff;
+    --muted:#666;
+    --shadow:0 4px 16px rgba(0,0,0,0.10);
+  }
+  body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    box-sizing:border-box;
+  }
+  .card{
+    background:var(--card);
+    width:100%;
+    max-width:520px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:28px 22px;
+    text-align:center;
+    box-sizing:border-box;
+  }
+  .logo{
+    max-width:220px;
+    width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto 14px;
+  }
+  h1{
+    color:var(--teal);
+    font-size:26px;
+    margin:0 0 12px;
+    line-height:1.2;
+  }
+  .intro{
+    font-size:15px;
+    color:#444;
+    line-height:1.55;
+    margin-bottom:24px;
+  }
+  .choice-box{
+    background:#fffdf7;
+    border:1px solid var(--gold);
+    border-radius:14px;
+    padding:20px 16px;
+    margin:0 0 14px;
+    text-align: left;
+  }
+  .choice-title {
+    color:#222;
+    font-size:15px;
+    font-weight: bold;
+    margin: 0 0 14px 0;
+    text-align: center;
+  }
+  .portal-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--teal);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+    transition: background 0.15s ease;
+  }
+  .portal-btn:hover {
+    background: #006666;
+  }
+  .portal-btn-secondary {
+    background: #e4e4e7;
+    color: #18181b;
+    border: 1px solid #d4d4d8;
+  }
+  .portal-btn-secondary:hover {
+    background: #d4d4d8;
+  }
+  .portal-btn:last-child {
+    margin-bottom: 0;
+  }
+  .support{
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .support a{
+    color: var(--teal);
+    text-decoration: none;
+  }
+  .support a:hover{
+    text-decoration: underline;
+  }
+  .mini-footer{
+    margin-top: 16px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.5;
+  }
+  .mini-footer a{
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .mini-footer a:hover{
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <!-- Official Assets and Logo Wrapper -->
+  <img class="logo" src="https://github.io" alt="Inbox Puzzles">
+  
+  <h1>Manage Your Subscription</h1>
+  
+  <div class="intro">
+    To update your payment method, view invoices, or change your billing status, please select how you originally joined us:
+  </div>
+
+  <div class="choice-box">
+    <div class="choice-title">Please choose an option below:</div>
+    
+    <!-- Option A: Standard Direct Website Account Pipeline -->
+    <a href="http://stripe.com" class="portal-btn" target="_blank" rel="noopener">
+      I purchased directly from the website
+    </a>
+
+    <!-- Option B: External Partner Marketplace Platform Routing -->
+    <a href="https://whop.com" class="portal-btn portal-btn-secondary" target="_blank" rel="noopener">
+      I purchased through a Whop link or affiliate
+    </a>
+  </div>
+
+  <div class="support">
+    Need help finding your billing dashboard? Contact us anytime at
+    <a href="mailto:support@inboxpuzzles.com">support@inboxpuzzles.com</a>
+  </div>
+</div>
+
+<div class="mini-footer">
+  <a href="https://github.io" target="_blank">Terms</a>
+  <span>•</span>
+  <a href="https://github.io" target="_blank">Privacy</a>
+</div>
+
+</body>
+</html>
