@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inbox Puzzles — Affiliate Resource Portal</title>
+  <style>
+    :root{
+      --teal:#008080;
+      --teal-dark:#006a6a;
+      --gold:#d8c178;
+      --bg:#ffe066;
+      --panel:#ffffff;
+      --ink:#1e1e1e;
+      --muted:#6b6b6b;
+      --line:#ddd;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      line-height:1.55;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header{
+      background:#ffffff;
+      border-bottom:2px solid #e3e3e3;
+      padding:12px 14px;
+    }
+    .header-inner{
+      max-width:980px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .brand img.logo{
+      height:60px;
+      width:auto;
+    }
+    .brand .title-wrap h1{
+      margin:0;
+      font-size:22px !important;
+      font-weight:800 !important;
+      color:#1e1e1e !important;
+    }
+    .brand .title-wrap .tagline{
+      font-size:14px !important;
+      color:#444 !important;
+      margin-top:3px;
+    }
+    .nav-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .nav-links a{
+      color:#006a6a;
+      font-weight:700;
+      text-decoration:none;
+      font-size:14px;
+    }
+    .nav-links a:hover{
+      text-decoration:underline;
+    }
+
+    /* ===== PAGE WRAP ===== */
+    .page{
+      max-width:980px;
+      margin:24px auto;
+      padding:0 14px;
+    }
+
+    .intro-card{
+      background:var(--panel);
+      border:2px solid var(--gold);
+      border-radius:16px;
+      padding:24px;
+      margin-bottom:24px;
+      box-shadow:0 4px 16px rgba(0,0,0,.06);
+    }
+    .intro-card h2{
+      margin:0 0 8px;
+      color:var(--teal);
+      font-size:28px;
+    }
+    .intro-card p{
+      margin:0 0 16px;
+      color:#444;
+    }
+
+    .jump-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .jump-btn{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:15px;
+      text-decoration:none;
+      background:var(--teal);
+      color:#fff;
+    }
+    .jump-btn.alt{
+      background:#f6f1df;
+      color:var(--teal);
+      border:1.5px solid var(--gold);
+    }
+
+    /* ===== SECTION CARDS ===== */
+    .section-card{
+      background:var(--panel);
+      border:1px solid #e1e1e1;
+      border-radius:16px;
+      padding:26px 24px;
+      margin-bottom:26px;
+      box-shadow:0 4px 14px rgba(0,0,0,.05);
+    }
+    .section-badge{
+      display:inline-block;
+      background:#f6f1df;
+      color:var(--teal);
+      font-weight:700;
+      font-size:12px;
+      text-transform:uppercase;
+      padding:5px 11px;
+      border-radius:999px;
+      margin-bottom:8px;
+    }
+    .section-card h3{
+      margin:0 0 8px;
+      font-size:24px;
+      color:var(--teal);
+    }
+    .section-desc{
+      margin:0 0 22px;
+      color:#555;
+      font-size:15px;
+    }
+
+    /* ===== SWIPE & COPY BOXES ===== */
+    .asset-block{
+      border:1px solid #e6e1d2;
+      background:#fcfbf6;
+      border-radius:12px;
+      padding:18px;
+      margin-bottom:18px;
+    }
+    .asset-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin-bottom:10px;
+      flex-wrap:wrap;
+    }
+    .asset-title{
+      font-weight:700;
+      font-size:16px;
+      color:#1e1e1e;
+    }
+    .copy-btn{
+      background:var(--teal);
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      padding:8px 14px;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+      transition:background .15s ease;
+    }
+    .copy-btn:hover{
+      background:var(--teal-dark);
+    }
+    .copy-box{
+      width:100%;
+      background:#ffffff;
+      border:1px solid #ddd;
+      border-radius:8px;
+      padding:12px;
+      font-family:inherit;
+      font-size:14px;
+      color:#222;
+      white-space:pre-wrap;
+      margin:0;
+      overflow-x:auto;
+    }
+    .code-font{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:13px;
+    }
+
+    .tip-banner{
+      background:#fff8dc;
+      border-left:4px solid var(--gold);
+      padding:12px 14px;
+      border-radius:6px;
+      font-size:14px;
+      color:#444;
+      margin-bottom:16px;
+    }
+
+    /* ===== BANNER PREVIEW GRID ===== */
+    .banner-preview{
+      background:#ffffff;
+      border:1px solid #ddd;
+      border-radius:10px;
+      padding:14px;
+      text-align:center;
+      margin-bottom:12px;
+    }
+    .banner-preview img{
+      max-width:100%;
+      height:auto;
+      border-radius:8px;
+      display:inline-block;
+    }
+    .banner-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .dl-btn{
+      display:inline-block;
+      background:#ffffff;
+      color:var(--teal);
+      border:1.5px solid var(--teal);
+      border-radius:8px;
+      padding:7px 14px;
+      font-size:13px;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .dl-btn:hover{
+      background:#f0fafa;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer{
+      margin-top:40px;
+      text-align:center;
+      padding:20px 16px 32px;
+      border-top:2px solid #e3e3e3;
+      background:#ffffff;
+      color:#777;
+      font-size:13px;
+    }
+    .footer-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      max-width:840px;
+      margin:0 auto;
+      line-height:1.4;
+    }
+    .footer-links{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      flex-wrap:wrap;
+    }
+    .footer-links a, .muted-link{
+      color:#008080;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .footer-links a:hover, .muted-link:hover{
+      text-decoration:underline;
+    }
+
+    @media(max-width:600px){
+      .header-inner{
+        flex-direction:column;
+        text-align:center;
+      }
+      .section-card{
+        padding:20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img class="logo" src="/word-search/assets/inbox-puzzles-logo.png" alt="Inbox Puzzles logo">
+        <div class="title-wrap">
+          <h1>Inbox Puzzles</h1>
+          <div class="tagline">Daily puzzles to brighten your day.</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#beginner-kit">Beginner Kit</a>
+        <a href="#pro-tools">Pro Banners &amp; Swipes</a>
+        <a href="https://github.io" target="_blank">Sales Page ➔</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- WELCOME & QUICK START -->
+    <div class="intro-card">
+      <h2>Welcome to Your Partner Resource Portal</h2>
+      <p>Everything you need to share Inbox Puzzles is right here. Simply grab your single master referral link from your <strong>Whop Affiliate Dashboard</strong>, replace <strong>[YOUR-WHOP-LINK]</strong> in any template below, and start sharing!</p>
+      <div class="jump-buttons">
+        <a href="#beginner-kit" class="jump-btn">1. Start Here: Beginner Kit (Friends &amp; Social)</a>
+        <a href="#pro-tools" class="jump-btn alt">2. Pro Tools: Banners &amp; Email Swipes</a>
+      </div>
+    </div>
+
+    <!-- FOLDER 1: BEGINNER KIT -->
+    <section id="beginner-kit" class="section-card">
+      <div class="section-badge">Folder 1 • Zero Tech Required</div>
+      <h3>Easy Sharing for Friends, Family &amp; Social Media</h3>
+      <p class="section-desc">New to sharing links? Use these simple, friendly messages to invite friends, family, or local community members to try Inbox Puzzles free for 7 days.</p>
+
+      <!-- Text Message 1 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <span class="asset-title">Text / WhatsApp Message #1: The Casual Coffee Invite</span>
+          <button class="copy-btn" onclick="copyText('text1', this)">Copy Text</button>
+        </div>
+        <pre id="text1" class="copy-box">Hey! I just started doing these daily puzzles that get sent right to my email every morning—crosswords, sudoku, and word searches. No apps to download or anything. Thought of you! Here is a link to try it free for a week if you want: [YOUR-WHOP-LINK]</pre>
+      </div>
+
+      <!-- Text Message 2 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <span class="asset-title">Text / WhatsApp Message #2: The Friendly Challenge</span>
+          <button class="copy-btn" onclick="copyText('text2', this)">Copy Text</button>
+        </div>
+        <pre id="text2" class="copy-box">I've been playing this daily crossword and word search every morning over coffee. Want to try it with me and see how fast we can finish them? You can get a free 7-day trial with no credit card here: [YOUR-WHOP-LINK]</pre>
+      </div>
+
+      <!-- Facebook Safe Post -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <span class="asset-title">Facebook &amp; Nextdoor Post (Spam-Safe Format)</span>
+          <button class="copy-btn" onclick="copyText('fbpost', this)">Copy Post</button>
+        </div>
+        <div class="tip-banner">
+          <strong>Facebook Safety Tip:</strong> Do not put your link inside the main Facebook post, as Facebook sometimes flags external tracking links. Publish the post text below (attach one of our coffee banner photos if you'd like!), then immediately paste your link in the <strong>First Comment</strong> underneath.
+        </div>
+        <pre id="fbpost" class="copy-box">MAIN POST TEXT:
