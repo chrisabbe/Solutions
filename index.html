@@ -1,128 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inbox Puzzles — Affiliate Partner Resource Portal</title>
+  <link rel="stylesheet" href="../shell.css" />
+  <style>
+    :root {
+      --teal: #008080;
+      --teal-dark: #006666;
+      --gold: #d8c178;
+      --bg: #f8f9fa;
+      --panel: #ffffff;
+      --text: #222222;
+      --muted: #555555;
+      --border: #e0e0e0;
+    }
 
-<title>Inbox Puzzles</title>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-  .card {
-    background: #ffffff;
-    padding: 30px 20px;
-    border-radius: 16px;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  }
+    /* Header */
+    .site-header {
+      background: var(--panel);
+      border-bottom: 3px solid var(--gold);
+      padding: 12px 18px;
+    }
 
-  h1 {
-    color: #008080;
-    font-size: 26px;
-    margin-bottom: 10px;
-  }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-  .subtext {
-    font-size: 15px;
-    color: #555;
-    margin-bottom: 20px;
-  }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
 
-  input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-  }
+    .brand-wrap img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
 
-  button {
-    width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    background: #d8c178;
-    color: #fff;
-    cursor: pointer;
-  }
+    .brand-text h1 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--teal);
+      line-height: 1.2;
+    }
 
-  button:hover {
-    background: #cbb167;
-  }
+    .brand-text p {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
 
-  .fineprint {
-    font-size: 12px;
-    color: #888;
-    margin-top: 10px;
-  }
-  .email-note{
-  font-size:13px;
-  color:#666;
-  margin-top:14px;
-  line-height:1.5;
-}
-</style>
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Container */
+    .page {
+      max-width: 1000px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .intro-card {
+      border-top: 5px solid var(--teal);
+    }
+
+    .intro-card h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font-size: 24px;
+    }
+
+    .highlight-box {
+      background: #f0f9f9;
+      border-left: 4px solid var(--teal);
+      padding: 14px 16px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .highlight-box code {
+      background: #ffffff;
+      border: 1px solid #cce5e5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      color: var(--teal-dark);
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #111111;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      margin: 0 0 6px;
+      color: var(--teal);
+      font-size: 21px;
+    }
+
+    .section-desc {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Asset Blocks */
+    .asset-block {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 20px;
+      background: #fcfcfc;
+    }
+
+    .asset-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .asset-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .asset-header h4 {
+      margin: 0;
+      font-size: 16px;
+      color: #111111;
+    }
+
+    .copy-box {
+      background: #ffffff;
+      border: 1px solid #dcdcdc;
+      border-radius: 8px;
+      padding: 14px;
+      font-family: inherit;
+      font-size: 14px;
+      white-space: pre-wrap;
+      margin: 0;
+      color: #222222;
+    }
+
+    .code-box {
+      background: #1e242b;
+      color: #e6edf3;
+      border-radius: 8px;
+      padding: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 10px 0 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid var(--gold);
+      background: var(--teal);
+      color: #ffffff;
+      transition: background 0.15s ease;
+    }
+
+    .btn:hover {
+      background: var(--teal-dark);
+    }
+
+    .btn.alt {
+      background: #ffffff;
+      color: var(--teal);
+      border: 1.5px solid var(--teal);
+    }
+
+    .btn.alt:hover {
+      background: #f0f9f9;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .safety-note {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      margin-bottom: 14px;
+      color: #451a03;
+    }
+
+    /* Banner Preview Cards */
+    .banner-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f3f4f6;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .banner-preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .steps-list {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      font-size: 14.5px;
+    }
+
+    .steps-list li {
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 28px 16px 40px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+    }
+
+    .site-footer a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="card">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://chrisabbe.github.io/Solutions/whop/index.html" class="brand-wrap">
+        <img src="../word-search/assets/inbox-puzzles-logo.png" alt="Inbox Puzzles Logo" />
+        <div class="brand-text">
+          <h1>Inbox Puzzles</h1>
+          <p>Daily puzzles to brighten your day</p>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#beginner-kit">Beginner Kit</a>
+        <a href="#pro-tools">Pro Banners &amp; Swipes</a>
+        <a href="https://chrisabbe.github.io/Solutions/whop/index.html" target="_blank" rel="noopener">Main Sales Page &rarr;</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Enjoy Your Daily Dose of Puzzles</h1>
+  <!-- Main Content -->
+  <main class="page">
 
-  <div class="subtext">
-    Crossword, Word Search, Sudoku & Cryptojoke — delivered daily to your inbox
-  </div>
+    <!-- Welcome / Intro Card -->
+    <section class="card intro-card">
+      <h2>Welcome to the Inbox Puzzles Partner Portal!</h2>
+      <p>
+        Thank you for partnering with us to share daily, distraction-free puzzles with readers everywhere.
+        Everything inside this portal is ready to copy, paste, and share—whether you are texting a friend
+        over morning coffee or launching a full newsletter campaign.
+      </p>
+      <div class="highlight-box">
+        <strong>Important Quick-Start Step:</strong> Before sharing any message or banner code below,
+        log into your <strong>Whop Affiliate Dashboard</strong>, copy your unique referral link, and replace
+        <code>[YOUR-WHOP-LINK]</code> with your personal tracking link so you receive credit for every trial and paid upgrade.
+      </div>
+    </section>
 
-  <form method="post" action="https://sendsteed.com/subscribe/">
+    <!-- Folder 1: Beginner Kit -->
+    <section id="beginner-kit" class="card">
+      <span class="section-badge">Folder 1 &bull; Beginner Kit</span>
+      <h3 class="section-title">Easy Sharing for Friends, Family &amp; Social Groups</h3>
+      <p class="section-desc">
+        No website or technical skills required. Just tap Copy, paste your Whop referral link, and send.
+      </p>
 
-    <!-- REQUIRED FIELDS -->
-    <input type="hidden" name="lllid" value="124212">
-    <input type="hidden" name="lluid" value="chrisabbe">
-    <input type="hidden" name="redirect" value="https://google.com">
+      <!-- Text / WhatsApp 1 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>1. Casual Text / WhatsApp Message (The Morning Routine)</h4>
+          <button class="btn" onclick="copyText('sms-1', this)">Copy Text</button>
+        </div>
+        <pre id="sms-1" class="copy-box">Hey! I just started doing daily puzzles sent straight to my email every morning—crosswords, word searches, sudoku, and a daily cryptojoke. No apps to download or anything. Thought of you! Here is a link to try it free for a week if you want: [YOUR-WHOP-LINK]</pre>
+      </div>
 
-    <!-- EMAIL -->
-    <input 
-      type="text" 
-      name="e124212" 
-      placeholder="your@email.com" 
-      required
-    >
+      <!-- Text / WhatsApp 2 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>2. Casual Text / WhatsApp Message (The Friendly Challenge)</h4>
+          <button class="btn" onclick="copyText('sms-2', this)">Copy Text</button>
+        </div>
+        <pre id="sms-2" class="copy-box">I've been playing this daily crossword and word search email every morning with my coffee. Works right on my phone or iPad without all those annoying video ads popping up. Check it out—you can try it free for 7 days here: [YOUR-WHOP-LINK]</pre>
+      </div>
 
-    <!-- BUTTON -->
-    <button type="submit">
-      Start My Free 7-Day Trial
-    </button>
+      <!-- Facebook & Nextdoor Safe Post -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>3. Facebook Group &amp; Nextdoor Recommendation Post</h4>
+          <button class="btn" onclick="copyText('fb-post', this)">Copy Post Text</button>
+        </div>
+        <div class="safety-note">
+          <strong>Facebook Safety Tip:</strong> Do <em>not</em> paste your referral link directly inside the main post body, as Facebook's automated filters can limit your reach. Publish the main text below (paired with one of our coffee &amp; puzzle photos), then immediately paste your link into the <strong>first comment</strong> underneath!
+        </div>
+        <pre id="fb-post" class="copy-box">My new favorite morning coffee routine! For anyone here who loves morning crosswords and sudoku but hates dealing with annoying phone apps and noisy ads, I found a great service called Inbox Puzzles. Fresh crosswords, word searches, and sudoku delivered straight to my email every morning. Works right on my phone or tablet with zero downloads or printing. Drop a comment or check the link below if you want to try a free 7-day trial (no credit card needed)!</pre>
+        <div style="margin-top: 12px;">
+          <strong>First Comment Template (Post right after publishing):</strong>
+          <pre id="fb-comment" class="copy-box" style="margin-top: 6px;">Here is the link to grab your free 7-day trial: [YOUR-WHOP-LINK]</pre>
+          <div class="btn-row">
+            <button class="btn alt" onclick="copyText('fb-comment', this)">Copy First Comment</button>
+          </div>
+        </div>
+      </div>
 
-  </form>
+      <!-- Offline Sharing: Coffee Demo & Community Flyer -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>4. Offline Sharing: 3-Step Coffee Demo &amp; Community Flyer</h4>
+          <button class="btn" onclick="copyText('flyer-text', this)">Copy Flyer Text</button>
+        </div>
+        <p style="font-size: 14px; margin-top: 0;">
+          <strong>The 3-Step Show &amp; Tell Phone Demo:</strong> Sitting with a friend or family member?
+          (1) Open today's Inbox Puzzles email on your phone/iPad. (2) Hand it over and let them solve a couple of clues right in the browser for 30 seconds. (3) While they're smiling at how easy it is, text them your referral link!
+        </p>
+        <p style="font-size: 14px;">
+          <strong>Printable Community Bulletin Flyer:</strong> Paste the text below into a document, generate a free QR code pointing to your Whop referral link (via qr-code-generator.com), and pin it on your local coffee shop, library, or community center board:
+        </p>
+        <pre id="flyer-text" class="copy-box">DAILY PUZZLES, DELIVERED TO YOUR INBOX!
+Crossword &bull; Word Search &bull; Sudoku &bull; Daily Cryptojoke
 
-  <!-- NEW EMAIL NOTICE -->
-  <div class="email-note">
-    📬 Check your inbox for a confirmation email.<br>
-    If you don’t see it, check your spam or promotions folder and move it to your inbox.<br>
-    To make sure you never miss a puzzle, add us to your contacts.
-  </div>
+Love morning puzzles, but hate tiny print, messy ink, or glitchy phone apps?
+&bull; No Apps to Download — Just open your morning email and play instantly.
+&bull; No Printing Needed — Plays smoothly on any phone, tablet, or computer.
+&bull; Start 100% Free — Try 7 full days with no credit card required.
 
-  <div class="fineprint">
-    Free 7-day trial. Unsubscribe anytime.
-  </div>
+[INSERT YOUR QR CODE IMAGE HERE]
 
-</div>
+Point your phone camera at the code above to start your free 7-day trial!
+Or visit: [YOUR-WHOP-LINK]</pre>
+      </div>
+    </section>
+
+    <!-- Folder 2: Pro Tools -->
+    <section id="pro-tools" class="card">
+      <span class="section-badge">Folder 2 &bull; Pro Marketing Suite</span>
+      <h3 class="section-title">Website Banners, HTML Embed Codes &amp; Email Swipes</h3>
+      <p class="section-desc">
+        High-resolution promotional banners and tested email copy for blogs, websites, newsletters, and social media ads.
+      </p>
+
+      <!-- Banner 1 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>Banner 1: Square / Sidebar Ad (Coffee &amp; Crossword)</h4>
+        </div>
+        <div class="banner-preview">
+          <img src="https://chrisabbe.github.io/Solutions/banner-square.png.jpg" alt="Inbox Puzzles Square Banner" style="max-width: 350px;" />
+        </div>
+        <div class="btn-row">
+          <a href="https://chrisabbe.github.io/Solutions/banner-square.png.jpg" download="inbox-puzzles-banner-square.jpg" target="_blank" rel="noopener" class="btn alt">Download Image</a>
+          <button class="btn" onclick="copyText('banner-code-1', this)">Copy HTML Embed Code</button>
+        </div>
+        <pre id="banner-code-1" class="code-box">&lt;a href="[YOUR-WHOP-LINK]" target="_blank" rel="noopener"&gt;&lt;img src="https://chrisabbe.github.io/Solutions/banner-square.png.jpg" alt="Inbox Puzzles — Daily Puzzles Delivered to Your Inbox" style="max-width:350px; width:100%; height:auto; border:0;" /&gt;&lt;/a&gt;</pre>
+      </div>
+
+      <!-- Banner 2 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>Banner 2: Wide Header / Leaderboard Ad (Desk &amp; Word Search)</h4>
+        </div>
+        <div class="banner-preview">
+          <img src="https://chrisabbe.github.io/Solutions/banner-wide.png.jpg" alt="Inbox Puzzles Wide Leaderboard Banner" style="max-width: 728px;" />
+        </div>
+        <div class="btn-row">
+          <a href="https://chrisabbe.github.io/Solutions/banner-wide.png.jpg" download="inbox-puzzles-banner-wide.jpg" target="_blank" rel="noopener" class="btn alt">Download Image</a>
+          <button class="btn" onclick="copyText('banner-code-2', this)">Copy HTML Embed Code</button>
+        </div>
+        <pre id="banner-code-2" class="code-box">&lt;a href="[YOUR-WHOP-LINK]" target="_blank" rel="noopener"&gt;&lt;img src="https://chrisabbe.github.io/Solutions/banner-wide.png.jpg" alt="Inbox Puzzles — Your Daily Brain Break Delivered" style="max-width:728px; width:100%; height:auto; border:0;" /&gt;&lt;/a&gt;</pre>
+      </div>
+
+      <!-- Banner 3 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>Banner 3: Vertical Sidebar / Mobile Story Ad (Living Room &amp; Sudoku)</h4>
+        </div>
+        <div class="banner-preview">
+          <img src="https://chrisabbe.github.io/Solutions/banner-vertical.png.jpg" alt="Inbox Puzzles Vertical Banner" style="max-width: 300px;" />
+        </div>
+        <div class="btn-row">
+          <a href="https://chrisabbe.github.io/Solutions/banner-vertical.png.jpg" download="inbox-puzzles-banner-vertical.jpg" target="_blank" rel="noopener" class="btn alt">Download Image</a>
+          <button class="btn" onclick="copyText('banner-code-3', this)">Copy HTML Embed Code</button>
+        </div>
+        <pre id="banner-code-3" class="code-box">&lt;a href="[YOUR-WHOP-LINK]" target="_blank" rel="noopener"&gt;&lt;img src="https://chrisabbe.github.io/Solutions/banner-vertical.png.jpg" alt="Inbox Puzzles — Senior-Friendly Daily Puzzles" style="max-width:300px; width:100%; height:auto; border:0;" /&gt;&lt;/a&gt;</pre>
+      </div>
+
+      <!-- Email Swipe 1 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>Email Swipe #1: The "No Apps, No Printing" Angle</h4>
+          <button class="btn" onclick="copyText('email-swipe-1', this)">Copy Email Swipe</button>
+        </div>
+        <pre id="email-swipe-1" class="copy-box">Subject: No apps. No printing. Just daily puzzles in your inbox
+
+Hi [Name],
+
+If you love starting your day with a good crossword or sudoku, you already know how frustrating it is to deal with tiny newspaper print, ink cartridges, or bloated mobile apps that constantly nag you with pop-up notifications.
+
+That's why I wanted to share a clean, simple service called Inbox Puzzles.
+
+It keeps all the best parts of traditional puzzles and sends a fresh set straight to your email inbox every morning:
+
+- A Mobile-Friendly Crossword (progress saves automatically)
+- A Smooth Word Search (just tap and drag to circle words)
+- A Crisp Classic Sudoku
+- A Playful Daily Cryptojoke
+
+You don't have to download a thing. You just open the email on your phone, tablet, or computer and start playing right in your web browser. It is the perfect companion for your morning coffee or an afternoon mental break.
+
+Right now, you can test out the full daily experience completely free for 7 days—with no credit card required to sign up:
+
+Get Your Daily Puzzles (7-Day Cardless Free Trial): [YOUR-WHOP-LINK]
+
+Happy solving!
+[Your Name]</pre>
+      </div>
+
+      <!-- Email Swipe 2 -->
+      <div class="asset-block">
+        <div class="asset-header">
+          <h4>Email Swipe #2: The Brain-Training &amp; Senior-Friendly Angle</h4>
+          <button class="btn" onclick="copyText('email-swipe-2', this)">Copy Email Swipe</button>
+        </div>
+        <pre id="email-swipe-2" class="copy-box">Subject: Keep your mind sharp with this simple morning coffee routine
+
+Hi [Name],
+
+Taking a few quiet moments each day to challenge your brain shouldn't feel like a chore. Sadly, most digital brain games today are overly complicated, flashing, and full of distractions.
+
+If you prefer something calm, comfortable, and easy on the eyes, you should look at Inbox Puzzles.
+
+Every morning, it delivers a clean, uncluttered set of four classic challenges straight to your email: a Crossword, Word Search, Sudoku, and a Cryptojoke decode.
+
+The grids are large, crisp, and display beautifully on iPads, tablets, phones, and desktop screens—with zero advertisements rushing you and zero apps to install. It is built entirely for puzzle lovers who appreciate keeping things simple.
+
+You can try a full week of daily delivery completely free (no credit card needed):
+
+Claim Your Free 7-Day Puzzle Trial: [YOUR-WHOP-LINK]
+
+Best regards,
+[Your Name]</pre>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      Need partner support? Email <a href="mailto:support@inboxpuzzles.com">support@inboxpuzzles.com</a>
+    </p>
+    <p>
+      &copy; 2026 Inbox Puzzles &bull; Created by Chris Abbe / Abbe Ventures
+    </p>
+  </footer>
+
+  <!-- Clipboard Copy Script -->
+  <script>
+    function copyText(elementId, btn) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "Copied!";
+        btn.style.background = "#16a34a";
+        btn.style.color = "#ffffff";
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = "";
+          btn.style.color = "";
+        }, 2000);
+      }).catch(err => {
+        console.error("Failed to copy text: ", err);
+      });
+    }
+  </script>
 
 </body>
 </html>
