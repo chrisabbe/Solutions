@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inbox Puzzles — Affiliate Partner Toolkit</title>
+  <style>
+    :root{
+      --teal:#008080;
+      --teal-dark:#006a6a;
+      --gold:#d8c178;
+      --bg:#ffe066;
+      --panel:#ffffff;
+      --ink:#1e1e1e;
+      --muted:#6b6b6b;
+      --line:#ddd;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      line-height:1.5;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header{
+      background:#ffffff;
+      border-bottom:2px solid #e3e3e3;
+      padding:12px 14px;
+    }
+    .header-inner{
+      max-width:980px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .brand img.logo{
+      height:60px;
+      width:auto;
+    }
+    .brand .title-wrap h1{
+      margin:0;
+      font-size:22px !important;
+      font-weight:800 !important;
+      color:#1e1e1e !important;
+    }
+    .brand .title-wrap .tagline{
+      font-size:14px !important;
+      color:#444 !important;
+      margin-top:3px;
+    }
+    .nav-links a{
+      color:#006a6a;
+      font-weight:700;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    /* ===== PAGE WRAP ===== */
+    .page{
+      max-width:680px;
+      margin:28px auto;
+      padding:0 14px;
+    }
+    .page-panel{
+      background:var(--panel);
+      border:2px solid var(--gold);
+      border-radius:18px;
+      padding:32px 28px;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+      text-align:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      background:#f6f1df;
+      color:var(--teal);
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      padding:6px 12px;
+      border-radius:999px;
+      margin-bottom:14px;
+    }
+
+    h2{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.2;
+      color:var(--teal);
+    }
+
+    .lead{
+      font-size:16px;
+      color:#444;
+      margin:0 0 24px;
+    }
+
+    .toolkit-list{
+      text-align:left;
+      background:#fcfbf6;
+      border:1px solid #e6e1d2;
+      border-radius:14px;
+      padding:18px 22px;
+      margin-bottom:26px;
+    }
+    .toolkit-list h3{
+      margin:0 0 10px;
+      font-size:16px;
+      color:var(--teal);
+    }
+    .toolkit-list ul{
+      margin:0;
+      padding-left:20px;
+      color:#333;
+      font-size:15px;
+    }
+    .toolkit-list li{
+      margin-bottom:8px;
+    }
+    .toolkit-list li:last-child{
+      margin-bottom:0;
+    }
+
+    /* ===== SENDSTEED FORM STYLING ===== */
+    .optin-form{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      max-width:420px;
+      margin:0 auto;
+    }
+    .optin-form input[type="text"]{
+      width:100%;
+      padding:14px 16px;
+      font-size:16px;
+      border:1.5px solid #ccc;
+      border-radius:10px;
+      outline:none;
+      transition:border-color .15s ease;
+    }
+    .optin-form input[type="text"]:focus{
+      border-color:var(--teal);
+    }
+    .optin-form button{
+      width:100%;
+      padding:15px 20px;
+      font-size:17px;
+      font-weight:700;
+      color:#ffffff;
+      background:var(--teal);
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      box-shadow:0 4px 12px rgba(0,128,128,.25);
+      transition:background .15s ease;
+    }
+    .optin-form button:hover{
+      background:var(--teal-dark);
+    }
+
+    .privacy-note{
+      margin-top:14px;
+      font-size:13px;
+      color:#777;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer{
+      margin-top:40px;
+      text-align:center;
+      padding:20px 16px 32px;
+      border-top:2px solid #e3e3e3;
+      background:#ffffff;
+      color:#777;
+      font-size:13px;
+    }
+    .footer-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      max-width:840px;
+      margin:0 auto;
+      line-height:1.4;
+    }
+    .footer-links{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      flex-wrap:wrap;
+    }
+    .footer-links a, .muted-link{
+      color:#008080;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .footer-links a:hover, .muted-link:hover{
+      text-decoration:underline;
+    }
+
+    @media(max-width:600px){
+      .header-inner{
+        flex-direction:column;
+        text-align:center;
+      }
+      .page-panel{
+        padding:24px 18px;
+      }
+      h2{
+        font-size:24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img class="logo" src="/word-search/assets/inbox-puzzles-logo.png" alt="Inbox Puzzles logo">
+        <div class="title-wrap">
+          <h1>Inbox Puzzles</h1>
+          <div class="tagline">Daily puzzles to brighten your day.</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="https://chrisabbe.github.io/sales-page-whop/index.html" target="_blank">View Sales Page ➔</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-panel">
+      <div class="eyebrow">Affiliate Partner Resources</div>
+      <h2>Unlock Your Complete Promo Toolkit</h2>
+      <p class="lead">Whether you are sharing with a few friends or running full email campaigns, enter your details below for instant access to all our promotional materials.</p>
+
+      <div class="toolkit-list">
+        <h3>What’s Inside Your Free Partner Portal:</h3>
+        <ul>
+          <li><strong>Beginner Quick-Start Kit:</strong> Copy-and-paste text messages, safe Facebook &amp; Nextdoor posts, a 3-step coffee demo, and a printable QR flyer.</li>
+          <li><strong>Pro Marketing Suite:</strong> High-resolution banners in 3 sizes with one-click HTML embed codes.</li>
+          <li><strong>Done-For-You Email Swipes:</strong> Proven newsletter templates ready to copy, paste, and send.</li>
+        </ul>
+      </div>
+
+      <form class="optin-form" method="post" action="https://www.sendsteed.com/subscribe/">
+        <input name="n132478" required="" type="text" placeholder="Your First Name">
+        <input name="e132478" required="" type="text" placeholder="Your Best Email Address">
+        <input type="hidden" name="lllid" value="132478">
+        <input type="hidden" name="lluid" value="chrisabbe">
+        <input type="hidden" name="redirect" value="">
+        <input type="hidden" name="source" value="whop-affiliate-portal">
+        <button type="submit">Get Instant Access to Promo Tools ➔</button>
+      </form>
+
+      <div class="privacy-note">
+        We respect your inbox. You’ll receive your portal link right away plus occasional promo tips. Unsubscribe anytime.
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        Questions?
+        <a class="muted-link" href="mailto:support@inboxpuzzles.com">support@inboxpuzzles.com</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://chrisabbe.github.io/Solutions/terms.html" target="_blank">Terms</a>
+        <span>•</span>
+        <a href="https://chrisabbe.github.io/Solutions/privacy.html" target="_blank">Privacy</a>
+      </div>
+      <div>© 2026 Inbox Puzzles</div>
+      <div>Created by Chris Abbe</div>
+      <div>Abbe Ventures</div>
+    </div>
+  </footer>
+
+</body>
+</html>
