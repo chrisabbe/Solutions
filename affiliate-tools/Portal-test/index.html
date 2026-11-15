@@ -310,7 +310,25 @@
     .footer-links a:hover, .muted-link:hover{
       text-decoration:underline;
     }
-    
+    /* Universal Banner Responsiveness (Fixes Mobile Landscape) */
+    .banner-preview img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 0 8px;
+      }
+      .card {
+        padding: 14px;
+      }
+      .banner-preview {
+        padding: 8px;
+      }
+    }
   </style>
 </head>
 <body>
