@@ -276,26 +276,41 @@
     .steps-list li {
       margin-bottom: 8px;
     }
-
-    /* Footer */
-    .site-footer {
-      text-align: center;
-      padding: 28px 16px 40px;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid var(--border);
-      margin-top: 32px;
+    /* ===== FOOTER ===== */
+    .site-footer{
+      margin-top:40px;
+      text-align:center;
+      padding:20px 16px 32px;
+      border-top:2px solid #e3e3e3;
+      background:#ffffff;
+      color:#777;
+      font-size:13px;
     }
-
-    .site-footer a {
-      color: var(--teal);
-      text-decoration: none;
-      font-weight: 600;
+    .footer-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      max-width:840px;
+      margin:0 auto;
+      line-height:1.4;
     }
-
-    .site-footer a:hover {
-      text-decoration: underline;
+    .footer-links{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      flex-wrap:wrap;
     }
+    .footer-links a, .muted-link{
+      color:#008080;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .footer-links a:hover, .muted-link:hover{
+      text-decoration:underline;
+    }
+    
   </style>
 </head>
 <body>
